@@ -14,5 +14,11 @@ insert into cliente(id_cliente, nome) values
  (2, 3, 2, '2023-10-06 12:17:01', 500.00),
  (3, 2, 3, '2023-10-06 12:20:01', 1500),
  (4, 1, 4, '2023-10-06 13:30:20', 2000);
- 
+
+/* 
+insere uma nova matricula, porem utilizando um comando de select para obter o valor do curso(avançado)
+(select valor from curso where id_curso = 4)
+*/
+ insert into matricula(id_matricula, id_cliente, id_curso, data, valor) values 
+ (5, 3, 4, '2023-10-07 19:30:20', (select valor from curso where id_curso = 4));
  
