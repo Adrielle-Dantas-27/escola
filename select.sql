@@ -1,12 +1,12 @@
 /*
-seleciona todas as colunas da tabela cliente e exibe todos os registos da tabela
+seleciona todas as colunas da tabela aluno e exibe todos os registos da tabela
 */
-select * from cliente;  
+select * from aluno;  
 
 /*
-seleciona apenas a coluna nome da tabela cliente e exibe todos os registos 
+seleciona apenas a coluna nome da tabela aluno e exibe todos os registos 
 */
-select nome from cliente;  
+select nome_aluno from aluno;  
 
 /*
 seleciona todas as colunas da tabela curso e exibe todos os registos da tabela

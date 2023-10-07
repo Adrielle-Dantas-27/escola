@@ -4,6 +4,6 @@
  where -> filtra apenas o identificador unico do curso, para atualizar somente uma linha!!!!
  */
 update curso 
-set valor = '2500', data = '2023-10-10'
+set valor_curso = '2500', nome_curso = 'MySQL'
 where id_curso = 4;    
 

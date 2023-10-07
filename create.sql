@@ -5,43 +5,45 @@ create database escola;
 use escola; 
 
 /*
-cria a tabela cliente
-define as colunas id_cliente e nome.
-id_cliente -> tipo inteiro e chave primária
-nome -> tipo varchar de 100 posiçoes
+cria a tabela aluno
+define as colunas id_aluno e nome_aluno.
+id_aluno -> tipo inteiro e chave primária
+nome_aluno -> tipo varchar de 100 posiçoes
 OBS: varchar é do tipo caracter. Durante a gravação ele so grava a quantidade de caracteres informada no comando. 
 	o char vai ocupar todos os espaços enviados no comando.
 */
-create table cliente (             
-id_cliente int primary key,       
-nome varchar(100)
+create table aluno (             
+id_aluno int primary key,       
+nome_aluno varchar(100)
 );
 
 /*
 cria a tabela curso
-define as colunas id_curso, nomecurso e valor.
+define as colunas id_curso, nome_curso e valor_curso.
 id_curso -> tipo inteiro e chave primária
-nomecurso -> tipo varchar de 100 posiçoes
-valor ->  tipo numero decimal, o 10 é o default caso nao seja especificado
+nome_curso -> tipo varchar de 100 posiçoes
+valor_curso ->  tipo numero decimal, o 10 é o default caso nao seja especificado
 */
 create table curso (
 id_curso int primary key,          
-nomecurso varchar(100),           
-valor decimal(10,2)                 
+nome_curso varchar(100),           
+valor_curso decimal(10,2)                 
 );
 
 /*
 cria a tabela matricula
-define as colunas id_matricula, id_cliente, id_curso, valor e data.
+define as colunas id_matricula, id_aluno, id_curso, valor_curso e data.
 id_matricula -> tipo inteiro e chave primária
-nomecurso -> tipo varchar de 100 posiçoes
-valor ->  tipo numero decimal, o 10 é o default caso nao seja especificado
-data -> tipo datetime (data e a hora)
+id_aluno -> tipo inteiro e chave estrangeira
+id_curso -> tipo inteiro e chave estrangeira
+valor_matricula ->  tipo numero decimal, o 10 é o default caso nao seja especificado
+data_matricula -> tipo datetime (data e a hora)
 */
 create table matricula (
 id_matricula int primary key,     
-id_cliente int,
+id_aluno int,
 id_curso int,
-valor decimal(10,2),
-data datetime                      
+valor_matricula decimal(10,2),
+data_matricula datetime                      
+
 );
