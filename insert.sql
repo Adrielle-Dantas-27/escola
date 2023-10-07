@@ -26,3 +26,11 @@ insere uma nova matricula, porem utilizando um comando de select para obter o va
  insert into matricula(id_matricula, id_aluno, id_curso, data_matricula, valor_matricula) values 
  (5, 3, 4, '2023-10-07 19:30:20', (select valor_curso from curso where id_curso = 4));
  -- serve atualizar um novo dado da tabela
+
+/*
+esse insert vai barrar qualquer campo que não esteja de acordo com a tabela pai
+*/
+ insert into matricula(id_matricula, id_aluno, id_curso, data_matricula, valor_matricula) values 
+ (6, 1, 2, '2023-10-07 19:30:20', 5);
+ 
+ 
