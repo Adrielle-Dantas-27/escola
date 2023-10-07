@@ -45,5 +45,23 @@ id_aluno int,
 id_curso int,
 valor_matricula decimal(10,2),
 data_matricula datetime                      
-
 );
+
+/*
+altera a tabela matricula adicionando uma chave estrangeira fk, referenciando a tabela aluno, campo id_aluno
+OBS: tem o objetivo de criar uma restrição onde apenas é permitido incluir ou atualizar matricula através de um aluno existente
+Error Code: 1452. Cannot add or update a child row: 
+a foreign key constraint fails (`escola`.`matricula`, CONSTRAINT `fk_matricula_aluno` FOREIGN KEY (`id_aluno`) REFERENCES `aluno` (`id_aluno`))
+
+integridade referencial -> impede que uma tabela filha seja modificada caso nao exista o registro na tabela pai.
+*/
+alter table matricula 
+add constraint fk_matricula_aluno
+foreign key (id_aluno) references aluno(id_aluno);
+
+/*
+altera a tabela matricula adicionando uma chave estrangeira fk, referenciando a tabela curso, campo id_curso
+*/
+alter table matricula 
+add constraint fk_matricula_curso
+foreign key (id_curso) references curso(id_curso);
